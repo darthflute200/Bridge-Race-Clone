@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6749301796279914214}
   - component: {fileID: 6749301796279914213}
   - component: {fileID: 8138504479115814314}
+  - component: {fileID: 7032265756025891846}
   m_Layer: 0
   m_Name: GreenBrick
   m_TagString: Brick
@@ -111,3 +112,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentColor: 2
+--- !u!114 &7032265756025891846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6749301796279914212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32caf3da6b9794e51b4b085f206a00e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartingPoint: {x: 0, y: 0, z: 0}

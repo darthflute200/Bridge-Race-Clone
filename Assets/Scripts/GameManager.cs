@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Direction = Vector3.zero;
-            PlayerAnimator.SetBool("IsRunning", true);
+            PlayerAnimator.SetBool("IsRunning", false);
         }
 
         transform.position += Direction * speed * Time.deltaTime;
@@ -62,11 +62,9 @@ public class GameManager : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(Direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
         }
-        if ( Direction == Vector3.zero)
-        {
-            PlayerAnimator.SetBool("IsRunning", false);
+
 
         }
-    }
+    
 
 }

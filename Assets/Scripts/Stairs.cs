@@ -20,21 +20,14 @@ public class Stairs : MonoBehaviour
             GameManager PlayerMove = collision.gameObject.GetComponent<GameManager>();
             Bricks PlayerBricks = collision.gameObject.GetComponent<Bricks>();
             Colors PlayerColor = collision.gameObject.GetComponent<Colors>();
-            if (PlayerColor.CurrentColor == global::Colors.Color.Blue)
+            if (PlayerColor.CurrentColor != StairColor.CurrentColor & PlayerBricks.Brick.Count > 0)
             {
-
-
-                if (PlayerBricks.Brick.Count > 0 & StairColor.CurrentColor != global::Colors.Color.Blue)
-                {
-                    StairColor.CurrentColor = global::Colors.Color.Blue;
-                    GameObject LastGameObject = PlayerBricks.Brick[PlayerBricks.Brick.Count - 1];
-                    PlayerBricks.Brick.Remove(PlayerBricks.Brick[PlayerBricks.Brick.Count - 1]);
-                    Destroy(LastGameObject);
-                    meshRenderer.material.color = StairColors[0];
-                    meshRenderer.enabled = true;
-                }
-
-
+                StairColor.CurrentColor = PlayerColor.CurrentColor;
+                GameObject Lastbrick = PlayerBricks.Brick[PlayerBricks.Brick.Count - 1];
+                PlayerBricks.Brick.Remove(Lastbrick);
+                Destroy(Lastbrick);
+                meshRenderer.enabled = true;
+                meshRenderer.material.color = StairColors[(int)PlayerColor.CurrentColor];
             }
 
 
