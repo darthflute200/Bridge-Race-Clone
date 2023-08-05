@@ -579,6 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3c2df5cadf94d7aa50fdfe7c641958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CloneBrick: {fileID: 3657390239812184748, guid: c3d6088199f414d99a1b98df0a2e7796, type: 3}
   StartPoint: {fileID: 3019502584904551112}
   Player: {fileID: 2243764344745340675}
   Brick: []

@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class Bricks : MonoBehaviour
 {
+    [SerializeField] GameObject CloneBrick;
     [SerializeField] Transform StartPoint;
     [SerializeField] GameObject Player;
     public List<GameObject> Brick = new List<GameObject>();
@@ -18,7 +19,6 @@ public class Bricks : MonoBehaviour
         if (other.CompareTag("Brick"))
         {
             StartingPosition BrickPosition = other.GetComponent<StartingPosition>();
-            Transform BrickLocation = other.GetComponent<Transform>();
             Colors Brickcolor = other.GetComponent<Colors>();
             Colors PlayerColor = GetComponent<Colors>();
             if (Brickcolor.CurrentColor == PlayerColor.CurrentColor)
@@ -49,7 +49,7 @@ public class Bricks : MonoBehaviour
             IEnumerator BrickSpawn()
             {
                 yield return new WaitForSeconds(5f);
-                Instantiate(other.gameObject, BrickPosition.StartingPoint, Quaternion.identity);
+                Instantiate(CloneBrick, BrickPosition.StartingPoint, Quaternion.identity);
 
             }
          

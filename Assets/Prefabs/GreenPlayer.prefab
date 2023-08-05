@@ -604,6 +604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7927b0c86864a405897ba54fdc889988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Up: 0
+  Direction: {x: 0, y: 0, z: 0}
   speed: 0
 --- !u!114 &1310457061847371309
 MonoBehaviour:
@@ -630,8 +632,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3c2df5cadf94d7aa50fdfe7c641958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CloneBrick: {fileID: 6749301796279914212, guid: 564c6793e7a9b44e0a2f25cb00ddf2d1, type: 3}
   StartPoint: {fileID: 5149622061203427014}
   Player: {fileID: 2552510188130480899}
+  Brick: []
 --- !u!1 &2864607714512010326
 GameObject:
   m_ObjectHideFlags: 0

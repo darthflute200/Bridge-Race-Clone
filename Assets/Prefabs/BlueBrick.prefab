@@ -124,4 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32caf3da6b9794e51b4b085f206a00e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BrickClone: {fileID: 3657390239812184748}
   StartingPoint: {x: 0, y: 0, z: 0}
