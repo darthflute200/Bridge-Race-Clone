@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
-{
-    public bool Up = false;
+{ 
     public Vector3 Direction;
     [SerializeField] float speed;
     Animator PlayerAnimator;
@@ -21,41 +20,10 @@ public class GameManager : MonoBehaviour
 
     private void Move()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            if(Up == true)
-            {
-                Direction = Vector3.up;
-                PlayerAnimator.SetBool("IsRunning", true);
-            }
-            else
-            {
-                Direction = Vector3.forward;
-                PlayerAnimator.SetBool("IsRunning", true);
-            }
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            Direction = Vector3.right;
-            PlayerAnimator.SetBool("IsRunning", true);
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            Direction = Vector3.left;
-            PlayerAnimator.SetBool("IsRunning", true);
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            Direction = Vector3.back;
-            PlayerAnimator.SetBool("IsRunning", true);
-        }
-        else
-        {
-            Direction = Vector3.zero;
-            PlayerAnimator.SetBool("IsRunning", false);
-        }
 
+        Direction = Input.GetAxisRaw("Vertical") * Vector3.forward + Input.GetAxisRaw("Horizontal") * Vector3.right;
         transform.position += Direction * speed * Time.deltaTime;
+        PlayerAnimator.SetFloat("Speed", speed);
 
         if (Direction != Vector3.zero)
         {
